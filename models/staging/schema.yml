@@ -1,0 +1,9 @@
+version:2
+
+sources:
+  - name: staging
+    database: gothic-sylph-387906
+    schema: nyc_taxi
+
+    tables:
+      - name: yellow_taxi_data
