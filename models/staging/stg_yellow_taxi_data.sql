@@ -1,7 +1,8 @@
 
 {{
     config(
-        materialized='view'
+        materialized='view',
+        external_dependency='dbt_utils'
     )
 }}
 
