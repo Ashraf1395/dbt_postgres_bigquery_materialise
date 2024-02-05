@@ -1,11 +1,15 @@
-DBT
+Welcome to your new dbt project!
 
-We can start using it in two ways: 
-either dbt cloud or dbt core
+### Using the starter project
 
-Both of have same started points the starter_project directory
+Try running the following commands:
+- dbt run
+- dbt test
 
 
-
-pip install dbt
-Note that, as of v1.0.0, pip install dbt is no longer supported and will raise an explicit error. Since v0.13, the PyPI package named dbt was a simple "pass-through" of dbt-core and the four original database adapter plugins. For v1, we formalized that split.
+### Resources:
+- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
+- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
+- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
+- Find [dbt events](https://events.getdbt.com) near you
+- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
