@@ -1,41 +1,3 @@
-Welcome to your new dbt project!
-
-### Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
-
-
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
-
-
-
-we can use dbt cloud or dbt core
-
-Connection - Bigquery
-Connection - Postgres
-
-dbt run
-
-dbt run --select stg_yellow_taxi_data
-
-
-Run dbt debs on the dbt cloud ide terminal to install all dependencies
-
-dbt deps
-
-dbt seed 
-
-To update the database
-dbt seed --full-refresh
-
-
 {{
     config(
         materialized='table'
@@ -45,12 +7,12 @@ dbt seed --full-refresh
 with green_tripdata as (
     select *, 
         'Green' as service_type
-    from {{ ref('stg_green_tripdata') }}
+    from {{ ref('stg_green_taxi_data') }}
 ), 
 yellow_tripdata as (
     select *, 
         'Yellow' as service_type
-    from {{ ref('stg_yellow_tripdata') }}
+    from {{ ref('stg_yellow_taxi_data') }}
 ), 
 trips_unioned as (
     select * from green_tripdata
@@ -58,7 +20,7 @@ trips_unioned as (
     select * from yellow_tripdata
 ), 
 dim_zones as (
-    select * from {{ ref('dim_zones') }}
+    select * from {{ ref('dimension_zones') }}
     where borough != 'Unknown'
 )
 select trips_unioned.tripid, 
@@ -92,10 +54,3 @@ inner join dim_zones as pickup_zone
 on trips_unioned.pickup_locationid = pickup_zone.locationid
 inner join dim_zones as dropoff_zone
 on trips_unioned.dropoff_locationid = dropoff_zone.locationid
-
-dbt build runs both seeds and models
-whereas dbt run only runs models
-and fbt seed runs seed
-
-dbt build --select +fact_trips
-euns all the models and seeds which are required to run fact_trips
