@@ -24,3 +24,8 @@ Connection - Postgres
 dbt run
 
 dbt run --select stg_yellow_taxi_data
+
+
+Run dbt debs on the dbt cloud ide terminal to install all dependencies
+
+dbt deps
