@@ -22,3 +22,5 @@ Connection - Bigquery
 Connection - Postgres
 
 dbt run
+
+dbt run --select stg_yellow_taxi_data
