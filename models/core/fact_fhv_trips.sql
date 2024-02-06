@@ -14,7 +14,12 @@ dim_zones as (
     where borough != 'Unknown'
 )
 select 
-fhv_tripdata.vendorid,	
+fhv_tripdata.dispatching_base_num,
+fhuv_tripdata.affiliated_base_num,
+pickup_zone.borough as pickup_borough, 
+pickup_zone.zone as pickup_zone, 
+dropoff_zone.borough as dropoff_borough, 
+dropoff_zone.zone as dropoff_zone,  
 fhv_tripdata.ratecodeid,		
 fhv_tripdata.pickup_locationid,	
 fhv_tripdata.dropoff_locationid,	
