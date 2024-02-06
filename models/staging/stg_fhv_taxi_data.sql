@@ -22,7 +22,7 @@ select
     cast(dropoff_datetime as timestamp) as dropoff_datetime,
     
     -- trip info
-    store_and_fwd_flag,
+    SR_Flag as store_and_fwd_flag,
     
 from tripdata
 where rn = 1
