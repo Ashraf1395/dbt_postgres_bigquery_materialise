@@ -16,7 +16,7 @@ dim_zones as (
 select 
 fhv_tripdata.dispatching_base_num,
 fhv_tripdata.affiliated_base_num,
-fhv_taxi_data.service_type,
+fhv_tripdata.service_type,
 pickup_zone.borough as pickup_borough, 
 pickup_zone.zone as pickup_zone, 
 dropoff_zone.borough as dropoff_borough, 
