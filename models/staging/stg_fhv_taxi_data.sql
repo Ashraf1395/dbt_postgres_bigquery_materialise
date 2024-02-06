@@ -25,7 +25,7 @@ select
     SR_Flag as store_and_fwd_flag,
     
 from tripdata
-where rn = 1
+where rn = 1 and DATE(pickup_datetime,"year")='2019'
 
 
 -- dbt build --select <model_name> --vars '{'is_test_run': 'false'}'
