@@ -2,7 +2,7 @@
 
 Welcome to our Analytics Engineering project where we leverage the power of dbt to transform raw taxi trip data into actionable insights. In this project, we'll walk you through the process of loading, transforming, and visualizing taxi trip data, culminating in user-friendly dashboards for analysis.
 
--   ![Architecture](./images/GCP%20horizontal%20framework%20(1).png)
+-   ![Architecture](./images/Architecture.png)
 
 ## Data & Tools
 
